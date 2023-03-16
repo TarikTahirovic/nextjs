@@ -11,18 +11,17 @@ const schema = buildSchema(`
   }
 `);
 
-
 // Define your GraphQL root resolver functions
 const rootValue = {
-    hello: () => 'Hello world!',
-    name: () => 'Tarik',
-    age: () => 35,
-    placeOfBirth: () => 'Sarajevo, BiH',
+  hello: () => 'Hello world!',
+  name: () => 'Tarik',
+  age: () => 35,
+  placeOfBirth: () => 'Sarajevo, BiH',
 };
 
 // Export an API route handler function
 export default graphqlHTTP({
-    schema: schema,
-    rootValue: rootValue,
-    graphiql: true, // enable GraphiQL in development
+  schema: schema,
+  rootValue: rootValue,
+  graphiql: true, // enable GraphiQL in development
 });

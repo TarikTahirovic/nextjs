@@ -1,11 +1,11 @@
-import Layout from '../components/Layout'
+import Layout from '../components/Layout';
 
 function HomePage() {
-    return (
-        <Layout>
-            <h1>Homepage</h1>
-        </Layout>
-    )
+  return (
+    <Layout>
+      <h1>Homepage</h1>
+    </Layout>
+  );
 }
 
-export default HomePage
+export default HomePage;
