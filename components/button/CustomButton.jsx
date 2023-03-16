@@ -4,7 +4,7 @@ import React from 'react';
 
 const CustomButton = ({ color, width, variant, children, ...rest }) => {
     return (
-        <Button variant={variant} color={color} sx={{ width }} {...rest}>
+        <Button variant={variant} color={color} sx={{ width , textTransform: 'none'}} {...rest}>
             {children}
         </Button>
     );
