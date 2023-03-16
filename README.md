@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+EDIN BEIIIII, follow these stepps blindly !!! else.... you shall not passss !!!!!
+
 First, install the dependencies with command:
 ```bash
 npm install
