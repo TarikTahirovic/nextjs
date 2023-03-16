@@ -21,10 +21,6 @@ const navigationStyle = css`
 function Layout({ children }) {
   return (
     <div>
-      <Head>
-        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
-        <title>Tarik je kroooooolj</title>
-      </Head>
       <div className={navigationStyle}>
         <Navigation />
         <div className={containerStyles}>{children}</div>
