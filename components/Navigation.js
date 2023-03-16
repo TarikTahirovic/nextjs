@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { css } from "@emotion/css";
-import {AppBar, Button, IconButton, Toolbar} from "@mui/material";
+import { css } from '@emotion/css';
+import { AppBar, Button, IconButton, Toolbar } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import MenuIcon from '@mui/icons-material/Menu';
 import PersonIcon from '@mui/icons-material/Person';
@@ -73,7 +73,7 @@ const logoContainerStyles = css`
   align-items: center;
   margin: 0;
   padding: 0;
-`
+`;
 
 const linkItemStyles = css`
   display: flex;
@@ -87,12 +87,13 @@ const linkItemStyles = css`
   @media (max-width: 1024px) {
     width: 100%;
   }
-`
+`;
 
 const hideOnMobile = css`
   @media (max-width: 1024px) {
-    display: none
-  }`
+    display: none;
+  }
+`;
 
 const toolBarStyles = css`
   @media (max-width: 1024px) {
@@ -101,52 +102,63 @@ const toolBarStyles = css`
     width: 100%;
     padding: 0;
   }
-`
+`;
 
 function Navigation() {
-    const router = useRouter();
-    const isBlogPage = router.pathname.startsWith('/blog');
+  const router = useRouter();
+  const isBlogPage = router.pathname.startsWith('/blog');
 
-    return (
-        <AppBar position="static" className={navStyles}>
-            <Toolbar className={toolBarStyles}>
-                <IconButton edge="start" color="inherit" aria-label="menu" className={logoContainerStyles}>
-                    <Link href="/profile" passHref className={logoStyles}>
-                        <img src={'https://uploads.toptal.io/profile_photo/image/user/220167/large_4e9cd719b54525d8efcf77494ef5fa0c.jpg'} className={logoStyles}/>
-                    </Link>
-                </IconButton>
-                <div className={`${linkStyles} ${router.pathname === '/' ? 'active' : ''}`}>
-                    <Link href="/" passHref>
-                        <Button color="inherit" startIcon={<HomeIcon />} className={linkItemStyles}><span className={hideOnMobile}>Home</span></Button>
-                    </Link>
-                </div>
-                <div className={`${linkStyles} ${router.pathname === '/dashboard' ? 'active' : ''}`}>
-                    <Link href="/dashboard" passHref>
-                        <Button color="inherit" startIcon={<MenuIcon />} className={linkItemStyles}><span className={hideOnMobile}>Dashboard</span></Button>
-                    </Link>
-                </div>
-                <div className={`${linkStyles} ${router.pathname === '/profile' ? 'active' : ''}`}>
-                    <Link href="/profile" passHref>
-                        <Button color="inherit" startIcon={<PersonIcon />} className={linkItemStyles}><span className={hideOnMobile}>Profile</span></Button>
-                    </Link>
-                </div>
-                <div className={`${linkStyles} ${router.pathname === '/countries-api' ? 'active' : ''}`}>
-                    <Link href="/countries-api" passHref>
-                        <Button color="inherit" startIcon={<PublicIcon />} className={linkItemStyles}><span className={hideOnMobile}>Countries</span></Button>
-                    </Link>
-                </div>
-                <div className={`${linkStyles} ${isBlogPage ? 'active' : ''}`}>
-                    <Link href="/blog" passHref>
-                        <Button color="inherit" startIcon={<ForumIcon />} className={linkItemStyles}>
-                        <span className={hideOnMobile}>Blog</span>
-                        </Button>
-                    </Link>
-                </div>
-            </Toolbar>
-        </AppBar>
-
-    )
+  return (
+    <AppBar position="static" className={navStyles}>
+      <Toolbar className={toolBarStyles}>
+        <IconButton edge="start" color="inherit" aria-label="menu" className={logoContainerStyles}>
+          <Link href="/profile" passHref className={logoStyles}>
+            <img
+              src={
+                'https://uploads.toptal.io/profile_photo/image/user/220167/large_4e9cd719b54525d8efcf77494ef5fa0c.jpg'
+              }
+              className={logoStyles}
+            />
+          </Link>
+        </IconButton>
+        <div className={`${linkStyles} ${router.pathname === '/' ? 'active' : ''}`}>
+          <Link href="/" passHref>
+            <Button color="inherit" startIcon={<HomeIcon />} className={linkItemStyles}>
+              <span className={hideOnMobile}>Home</span>
+            </Button>
+          </Link>
+        </div>
+        <div className={`${linkStyles} ${router.pathname === '/dashboard' ? 'active' : ''}`}>
+          <Link href="/dashboard" passHref>
+            <Button color="inherit" startIcon={<MenuIcon />} className={linkItemStyles}>
+              <span className={hideOnMobile}>Dashboard</span>
+            </Button>
+          </Link>
+        </div>
+        <div className={`${linkStyles} ${router.pathname === '/profile' ? 'active' : ''}`}>
+          <Link href="/profile" passHref>
+            <Button color="inherit" startIcon={<PersonIcon />} className={linkItemStyles}>
+              <span className={hideOnMobile}>Profile</span>
+            </Button>
+          </Link>
+        </div>
+        <div className={`${linkStyles} ${router.pathname === '/countries-api' ? 'active' : ''}`}>
+          <Link href="/countries-api" passHref>
+            <Button color="inherit" startIcon={<PublicIcon />} className={linkItemStyles}>
+              <span className={hideOnMobile}>Countries</span>
+            </Button>
+          </Link>
+        </div>
+        <div className={`${linkStyles} ${isBlogPage ? 'active' : ''}`}>
+          <Link href="/blog" passHref>
+            <Button color="inherit" startIcon={<ForumIcon />} className={linkItemStyles}>
+              <span className={hideOnMobile}>Blog</span>
+            </Button>
+          </Link>
+        </div>
+      </Toolbar>
+    </AppBar>
+  );
 }
-
 
 export default Navigation;

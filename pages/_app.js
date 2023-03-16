@@ -1,11 +1,11 @@
-import '@/styles/globals.css'
-import {ApolloProvider} from "@apollo/client";
-import {client} from "@/pages/countries-api";
+import '@/styles/globals.css';
+import { ApolloProvider } from '@apollo/client';
+import { client } from '@/pages/countries-api';
 
 export default function App({ Component, pageProps }) {
   return (
-      <ApolloProvider client={client}>
-          <Component {...pageProps} />
-      </ApolloProvider>
-  )
+    <ApolloProvider client={client}>
+      <Component {...pageProps} />
+    </ApolloProvider>
+  );
 }
